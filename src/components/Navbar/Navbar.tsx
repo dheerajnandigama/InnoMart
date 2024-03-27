@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Group, ScrollArea } from '@mantine/core';
 import { Text } from '@mantine/core';
+import { UserButton } from '../UserButton/UserButton';
 import {
   IconBellRinging,
   IconFingerprint,
@@ -160,9 +161,12 @@ export function Navbar() {
         <Text fw={500} tt="uppercase" ta="center" size="sm" c="white">Categories</Text>
         <IconCategory style={{ color: 'white' }} />
         </Group>
-        <ScrollArea h={"80%"}>
+        <ScrollArea h={"67%"}>
         {links}
         </ScrollArea>
+        <div className={classes.footer}>
+        <UserButton />
+      </div>
       </div>
     </nav>
   );

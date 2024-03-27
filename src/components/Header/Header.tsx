@@ -1,7 +1,7 @@
-import { Autocomplete, Group, Burger, rem } from '@mantine/core';
+import { Autocomplete, Group, Burger, rem, TextInput, ActionIcon, useMantineTheme, TextInputProps, Anchor, Button } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Text } from '@mantine/core';
-import { IconSearch } from '@tabler/icons-react';
+import { IconArrowRight, IconSearch, IconShoppingCart } from '@tabler/icons-react';
 // import { MantineLogo } from '@mantinex/mantine-logo';
 import { IconBuildingStore } from '@tabler/icons-react';
 import classes from './Header.module.css';
@@ -14,12 +14,11 @@ const links = [
     { link: '/community', label: 'Community' },
 ];
 
-export function Header() {
-
-
-
+export function Header(props: TextInputProps) {
 
     const [opened, { toggle }] = useDisclosure(false);
+
+    const theme = useMantineTheme();
 
     const items = links.map((link) => (
         <a
@@ -36,22 +35,30 @@ export function Header() {
         <header className={classes.header}>
             <div className={classes.inner}>
                 <Group>
-                    <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-                    <IconBuildingStore size={28} style={{ color: 'white' }} />
-                    <Text fw={500} tt="uppercase" ta="center" size="xl" c="white">InnoMart</Text>
+                    <IconBuildingStore size={45} style={{ color: 'white' }} />
+                    <Text fw={900} size="xl" c="white">InnoMart</Text>
                 </Group>
 
                 <Group>
-                    <Group ml={50} gap={5} className={classes.links} visibleFrom="sm">
-                        {items}
-                    </Group>
-                    <Autocomplete
-                        className={classes.search}
-                        placeholder="Search"
-                        leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
-                        data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
-                        visibleFrom="xs"
+                    <TextInput
+                        radius="sm"
+                        size="md"
+                        placeholder="Search products"
+                        rightSectionWidth={180}
+                        leftSection={<IconSearch style={{ width: rem(18), height: rem(18) }} stroke={1.5} />}
+                        rightSection={
+                            <ActionIcon size={32} color="#0B3797" radius="md"  variant="filled">
+                                <IconArrowRight style={{width: rem(18), height: rem(18) }} stroke={1.5} />
+                            </ActionIcon>
+                        }
+                        {...props}
                     />
+
+                </Group>
+                <Group>
+                    <Button leftSection={<IconShoppingCart size={25} />} size="lg" color="#0B3797">
+                        Cart
+                    </Button>
                 </Group>
             </div>
         </header>
