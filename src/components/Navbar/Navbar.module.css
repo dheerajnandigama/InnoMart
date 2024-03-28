@@ -12,13 +12,16 @@
   }
   
   .header {
-    padding-bottom: var(--mantine-spacing-md);
+    padding-top: var(--mantine-spacing-sm);
+    padding-bottom: var(--mantine-spacing-sm);
+    margin-bottom: calc(var(--mantine-spacing-md) * 1.5);
     margin-bottom: calc(var(--mantine-spacing-md) * 1.5);
     border-bottom: rem(1px) solid var(--mantine-color-blue-7);
+    border-top: rem(1px) solid var(--mantine-color-blue-7);
+
   }
   
   .footer {
-    padding-top: var(--mantine-spacing-sm);
     margin-top: var(--mantine-spacing-md);
     border-top: rem(1px) solid var(--mantine-color-blue-7);
   }

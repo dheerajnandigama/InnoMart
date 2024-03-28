@@ -3,16 +3,6 @@ import { Group, ScrollArea } from '@mantine/core';
 import { Text } from '@mantine/core';
 import { UserButton } from '../UserButton/UserButton';
 import {
-  IconBellRinging,
-  IconFingerprint,
-  IconKey,
-  IconSettings,
-  Icon2fa,
-  IconDatabaseImport,
-  IconReceipt2,
-  IconSwitchHorizontal,
-  IconLogout,
-  IconMacro,
   IconArmchair2,
   IconBasket,
   IconCar,
@@ -20,10 +10,8 @@ import {
   IconDeviceMobile,
   IconDeviceWatch,
   IconDeviceWatchStats,
-  IconDevices,
   IconDiamond,
   IconFlipFlops,
-  IconHomeDollar,
   IconLamp,
   IconMan,
   IconMasksTheater,
@@ -34,6 +22,8 @@ import {
   IconSunglasses,
   IconWoman,
   IconCategory,
+  IconHome,
+  IconDeviceLaptop,
 } from '@tabler/icons-react';
 import classes from './Navbar.module.css';
 
@@ -44,7 +34,7 @@ const IconMap:any={
     },
     laptops:{
         name: 'Laptops',
-        icon: <IconDevices/>,
+        icon: <IconDeviceLaptop/>,
     },
     fragrances:{
         name: 'Fragrances',
@@ -60,7 +50,7 @@ const IconMap:any={
     },
     "home-decoration":{
         name: 'Home Decoration',
-        icon: <IconHomeDollar/>,
+        icon: <IconHome/>,
     },
     furniture:{
         name: 'Furniture',

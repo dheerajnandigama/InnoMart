@@ -1,5 +1,6 @@
 import { Title, Text, Anchor } from '@mantine/core';
 import classes from './Welcome.module.css';
+import '@mantine/carousel/styles.css';
 
 export function Welcome() {
   return (
